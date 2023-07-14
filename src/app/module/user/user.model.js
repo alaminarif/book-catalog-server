@@ -5,6 +5,13 @@ const UserShcema = new Schema({
     type: String,
     required: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
+  confirmPassword: {
+    type: String,
+  },
 });
 
 const User = mongoose.model("User", UserShcema);
