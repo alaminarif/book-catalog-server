@@ -1,7 +1,8 @@
 const User = require("./user.model");
 
-exports.getUser = async () => {
-  const result = await User.find({});
+exports.getUser = async (query) => {
+  console.log("service : ", query);
+  const result = await User.findOne({ query });
   return result;
 };
 exports.createUser = async (data) => {

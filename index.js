@@ -1,14 +1,14 @@
 const app = require("./app");
 
-const port = 5000;
-// const port = process.env.PORT;
+// const port = 5000;
+const port = process.env.PORT;
 const mongoose = require("mongoose");
 
 // database connection
 const boostrap = async () => {
   try {
-    // await mongoose.connect(process.env.DATABASE_URL);
-    await mongoose.connect(" mongodb+srv://assignment:M8qzuTZGRfOk5qlf@cluster0.ixcymbh.mongodb.net/book-catalog?retryWrites=true&w=majority");
+    await mongoose.connect(process.env.DATABASE_URL);
+    // await mongoose.connect(" mongodb+srv://assignment:M8qzuTZGRfOk5qlf@cluster0.ixcymbh.mongodb.net/book-catalog?retryWrites=true&w=majority");
 
     app.listen(port, () => {
       console.log(`Application  listening on port ${port}`);
