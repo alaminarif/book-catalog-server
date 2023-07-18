@@ -1,18 +1,19 @@
-import express from "express";
-import { BookRoutes } from "../modules/books/books.route";
-
-const router = express.Router();
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const books_route_1 = require("../modules/books/books.route");
+const router = express_1.default.Router();
 const moduleRoutes = [
-  {
-    path: "/books",
-    route: BookRoutes,
-  },
+    {
+        path: "/books",
+        route: books_route_1.BookRoutes,
+    },
 ];
 moduleRoutes.forEach((route) => router.use(route.path, route.route));
-
-export default router;
-
+exports.default = router;
 /*
 https://i.ibb.co/pr3KXh3/pngegg-2.png
 https://i.ibb.co/0yGTYSz/pngegg-1.png
